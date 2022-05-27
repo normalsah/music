@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Song List</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h1>Song List</h1>
+    </div>
+
+    <div class="form-control">
+      <input class="search" id="txtSearch" type="text" placeholder="Online Search">
+      <button class="btn btn-primary search" onclick="processChordSearch()">Chord Search</button>
+      <button class="btn btn-primary search" onclick="processLyricSearch()">Lyric Search</button>
+      <button class="btn btn-primary search" onclick="processYoutubeSearch()">Youtube Search</button>
+    </div>
+    
+
+    <table class="table table-bordered table-primary table-striped">
+      <!-- Table Header -->
+      <thead class="table-dark">
+        <th>Song</th>
+        <th>Lyrics</th>
+        <th>Chords</th>
+        <th>Youtube</th>
+        <th>Play</th>
+      </thead>
+
+      <!-- Table Body -->
+      <tbody>
+        <!-- Always Remember Us This Way -->
+        <tr>
+          <td>Always Remember Us This Way</td>
+          <td><a href="https://www.azlyrics.com/lyrics/ladygaga/alwaysrememberusthisway.html">A Star is Born
+              Soundtrack</a></td>
+          <td><a
+              href="https://tabs.ultimate-guitar.com/tab/misc-soundtrack/a-star-is-born-always-remember-us-this-way-chords-2484211">Chords</a>
+          </td>
+          <td><a href="https://www.youtube.com/watch?v=5vheNbQlsyU">Official</a></td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- California Dreamin' -->
+        <tr>
+          <td>California Dreamin'</td>
+          <td><a href="https://www.azlyrics.com/lyrics/mamasandthepapas/californiadreamin.html">Mamas and Papas</a></td>
+          <td><a
+              href="https://tabs.ultimate-guitar.com/tab/the-mamas-the-papas/california-dreamin-chords-862466">Chords</a>
+          </td>
+          <td><a href="https://www.youtube.com/watch?v=N-aK6JnyFmk">Video</a></td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- Free Bird -->
+        <tr>
+          <td><a href="lyrics_chords/Lynyrd Skynyrd - Freebird.txt">Free Bird</a></td>
+          <td>
+            <a href="https://www.azlyrics.com/lyrics/lynyrdskynyrd/freebird.html">www.azlyrics.com</a>
+          </td>
+          <td>
+            <p><a href="https://tabs.ultimate-guitar.com/tab/lynyrd-skynyrd/free-bird-chords-127116">Chords</a></p>
+            <p><a href="https://tabs.ultimate-guitar.com/tab/lynyrd-skynyrd/free-bird-tabs-350756">Tab</a></p>
+          </td>
+          <td><a href="https://www.youtube.com/watch?v=CqnU_sJ8V-E">Official</a></td>
+          <td>
+            <a href="mp3/Lynard Skynard - Free Bird.mp3">mp3</a>
+          </td>
+        </tr>
+
+        <!-- Have You Ever Seen The Rain -->
+        <tr>
+          <td>Have You Ever Seen The Rain</td>
+          <td>
+            <a
+              href="https://www.azlyrics.com/lyrics/creedenceclearwaterrevival/haveyoueverseentherain.html">www.azlyrics.com</a>
+          </td>
+          <td>
+            <a
+              href="https://tabs.ultimate-guitar.com/tab/creedence-clearwater-revival/have-you-ever-seen-the-rain-chords-56479">Chords</a>
+          </td>
+          <td>
+            <p><a href="https://www.youtube.com/watch?v=u1V8YRJnr4Q">CCR (Official)</a></p>
+            <p><a href="https://www.youtube.com/watch?v=gY7p1RqXoWU">Fogerty’s Factory</a></p>
+          </td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- I'm The Only One -->
+        <tr>
+          <td><a href="lyrics_chords/Melissa Etheridge - I'm The Only One.txt">I'm The Only One</a></td>
+          <td><a href="https://www.azlyrics.com/lyrics/melissaetheridge/imtheonlyone.html">www.azlyrics.com</a></td>
+          <td><a href="https://tabs.ultimate-guitar.com/tab/melissa-etheridge/im-the-only-one-chords-1511970">Chords</a>
+          </td>
+          <td><a href="https://www.youtube.com/watch?v=oCphbDRkZSo">Official Video</a></td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- Killing Me Softly -->
+        <tr>
+          <td><a href="lyrics_chords/Fugees - Killing me Softly.txt">Killing Me Softly</a></td>
+          <td><a href="https://www.azlyrics.com/lyrics/robertaflack/killingmesoftlywithhissong.html">Roberta Flack
+              Version</a></td>
+          <td><a href="https://tabs.ultimate-guitar.com/tab/fugees/killing-me-softly-chords-854650">Chords</a></td>
+          <td><a href="https://www.youtube.com/watch?v=oKOtzIo-uYw">Fugees Version</a></td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- Maggie May -->
+        <tr>
+          <td><a href="lyrics_chords/Rod Stewart - Maggie May.txt">Maggie May</a></td>
+          <td><a href="https://www.azlyrics.com/lyrics/rodstewart/maggiemay.html">www.azlyrics.com</a></td>
+          <td><a href="https://tabs.ultimate-guitar.com/tab/rod-stewart/maggie-may-chords-354424">Chords</a></td>
+          <td><a href="https://www.youtube.com/watch?v=jubOWUlkxuk">Official</a></td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- My Sweet Lord -->
+        <tr>
+          <td><a href="lyrics_chords/George Harrison - My Sweet Lord.txt">My Sweet Lord</a></td>
+          <td><a href="https://www.azlyrics.com/lyrics/georgeharrison/mysweetlord.html">www.azlyrics.com</a></td>
+          <td><a href="https://tabs.ultimate-guitar.com/tab/george-harrison/my-sweet-lord-chords-106200">Chords</a></td>
+          <td><a href="https://www.youtube.com/watch?v=04v-SdKeEpE">Official</a></td>
+          <td><a href="mp3/George Harrison - My Sweet Lord.mp3">Studio</a></td>
+        </tr>
+
+        <!-- Something -->
+        <tr>
+          <td><a href="lyrics_chords/Beatles - SomethingLyricChords.txt">Something</a></td>
+          <td><a href="https://www.azlyrics.com/lyrics/beatles/something-abbey.html">Abbey Road Version</a></td>
+          <td><a href="https://tabs.ultimate-guitar.com/tab/the-beatles/something-chords-335727">Chords</a></td>
+          <td><a href="https://www.youtube.com/watch?v=UelDrZ1aFeY">Official</a></td>
+          <td><a href="mp3/02 Something.flac">Abbey Road</a></td>
+        </tr>
+
+        <!-- Tennessee Whiskey -->
+        <tr>
+          <td>
+            <a href="lyrics_chords/Chris Stapleton - Tennessee Whiskey.txt">Tennessee Whiskey</a>
+          </td>
+          <td>
+            <a href="https://www.azlyrics.com/lyrics/chrisstapleton/tennesseewhiskey.html">www.azlyrics.com</a>
+          </td>
+          <td>
+            <p><a
+                href="https://tabs.ultimate-guitar.com/tab/chris-stapleton/tennessee-whiskey-chords-1741042">Standard</a>
+            </p>
+            <p><a href="https://tabs.ultimate-guitar.com/tab/chris-stapleton/tennessee-whiskey-chords-1802477">Capo: 2nd
+                Fret</a></p>
+          </td>
+          <td>
+            <a href="https://www.youtube.com/watch?v=4zAThXFOy2c">Vevo (Official)</a>
+          </td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- Tequila Sunrise -->
+        <tr>
+          <td>
+            <a href="lyrics_chords/Eagles - Tequila Sunrise.txt">Tequila Sunrise</a>
+          </td>
+          <td>
+            <p><a href="https://www.azlyrics.com/lyrics/eagles/tequilasunrise19388.html">Desperado Version</a></p>
+            <p><a href="https://www.azlyrics.com/lyrics/eagles/tequilasunrise48471.html">Live</a></p>
+          </td>
+          <td>
+            <p><a href="https://tabs.ultimate-guitar.com/tab/eagles/tequila-sunrise-chords-199062">Chords</a></p>
+            <p><a href="https://tabs.ultimate-guitar.com/tab/eagles/tequila-sunrise-tabs-93317">Tab</a></p>
+          </td>
+          <td>
+            <p><a href="https://www.youtube.com/watch?v=1K0N7UaZpz8">Original</a></p>
+            <p><a href="https://www.youtube.com/watch?v=Cb602bwgsx0">Unplugged</a></p>
+          </td>
+          <td>
+            <a href="mp3/05 Tequila Sunrise [Live].flac">Hell Freezes Over</a>
+          </td>
+        </tr>
+
+        <!-- The Man Who Sold The World -->
+        <tr>
+          <td><a href="lyrics_chords/Nirvana - The Man Who Sold the World.txt">Nirvana Version</a></td>
+          <td><a href="https://www.azlyrics.com/lyrics/nirvana/themanwhosoldtheworld.html">Nirvana Version</a></td>
+          <td><a href="https://tabs.ultimate-guitar.com/tab/nirvana/the-man-who-sold-the-world-chords-651988">Chords</a>
+          </td>
+          <td><a href="https://www.youtube.com/watch?v=fregObNcHC8">MTV Unplugged</a></td>
+          <td><a href="mp3/04 The Man Who Sold The World.flac">MTV Unplugged</a></td>
+        </tr>
+
+        <!-- What's UP -->
+        <tr>
+          <td>What's Up?</td>
+          <td><a href="https://www.azlyrics.com/lyrics/4nonblondes/whatsup.html">4 Non Blondes</a></td>
+          <td>
+            <p><a href="https://tabs.ultimate-guitar.com/tab/4-non-blondes/whats-up-chords-268676">Standard</a></p>
+            <p><a href="https://tabs.ultimate-guitar.com/tab/4-non-blondes/whats-up-chords-349210">Capo: 2nd Fret</a>
+            </p>
+          </td>
+          <td><a href="https://www.youtube.com/watch?v=6NXnxTNIWkc">Official</a></td>
+          <td>n/a</td>
+        </tr>
+
+        <!-- Your Heart Is As Black As Night -->
+        <tr>
+          <td><a href="lyrics_chords/Melody Gardot - Your Heart is as Black as Night Capo3.txt">Your Heart Is As Black
+              As Night</a></td>
+          <td><a href="https://www.azlyrics.com/lyrics/melodygardot/yourheartisasblackasnight.html">www.azlyrics.com
+              </www></a></td>
+          <td><a
+              href="https://tabs.ultimate-guitar.com/tab/melody-gardot/your-heart-is-as-black-as-night-chords-1133996">Chords</a>
+          </td>
+          <td>
+            <p><a href="https://www.youtube.com/watch?v=7d_rHsDm2tg">Studio</a></p>
+            <p><a href="https://www.youtube.com/watch?v=4dJ0ISaTLCc">Live</a></p>
+          </td>
+          <td>n/a</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <script src="index.js"></script> -->
+  <script src="js.js"></script>
+</body>
+
+</html>
