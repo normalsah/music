@@ -1,8 +1,8 @@
 // Url Constants
-var urlLyric = "https://www.azlyrics.com";
-var urlLyricSearch = "https://search.azlyrics.com/search.php?q=";
 var urlChord = "https://www.ultimate-guitar.com";
 var urlChordSearch = "https://www.ultimate-guitar.com/search.php?search_type=title&value=";
+var urlLyric = "https://www.azlyrics.com";
+var urlLyricSearch = "https://search.azlyrics.com/search.php?q=";
 var urlYoutube = "https://www.youtube.com";
 var urlYoutubeSearch = "https://www.youtube.com/results?search_query=";
 
@@ -19,6 +19,11 @@ function processLyricSearch() {
 // Process Youtube Search
 function processYoutubeSearch() {
   window.location = getTxtSearch() === "" ? urlYoutube : urlYoutubeSearch + getTxtSearch();
+}
+
+// Process Clear
+function processClear() {
+  document.getElementById("txtSearch").value = "";
 }
 
 // Get text input
