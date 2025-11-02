@@ -372,10 +372,6 @@ function createLink(url, text) {
   return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
 }
 
-function createLink(url, text) {
-  return `<a href="${url}" target="_blank" rel="noopener noreferrer">${text}</a>`;
-}
-
 function populateSongTable() {
   const tbody = document.getElementById("songTableBody");
   tbody.innerHTML = ""; // Clear any existing rows
