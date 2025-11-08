@@ -240,7 +240,7 @@ const songs = [
       { label: "MP3", url: "mp3/ChrisStapleton-TennesseeWhiskey.mp3" }
     ]
   },
-    {
+  {
     title: "Tequila Sunrise",
     titleLink: "lyrics_chords/Eagles - Tequila Sunrise.txt",
     chords: [
@@ -346,7 +346,7 @@ function processChordSearch() {
 function processLyricSearch() {
   var query = getTxtSearch();
   var url = query === "" ? urlLyric : urlLyricSearch + encodeURIComponent(query);
-  
+
   window.open(url, "_blank");
 }
 
@@ -354,7 +354,7 @@ function processLyricSearch() {
 function processYoutubeSearch() {
   var query = getTxtSearch();
   var url = query === "" ? urlYoutube : urlYoutubeSearch + encodeURIComponent(query);
- 
+
   window.open(url, "_blank");
 }
 
@@ -377,39 +377,103 @@ function populateSongTable() {
   tbody.innerHTML = ""; // Clear any existing rows
 
   songs.forEach(song => {
+    // const row = document.createElement("tr");
     const row = document.createElement("tr");
+    row.classList.add("song-item");
+    row.setAttribute("data-title", song.title);
+
 
     // Title cell: link to .txt file if available
-    const titleCell = `<td>${
-      song.titleLink
+    const titleCell = `<td>${song.titleLink
         ? createLink(song.titleLink, song.title)
         : song.title
-    }</td>`;
+      }</td>`;
 
     // Chords cell
-    const chordsCell = `<td>${
-      song.chords?.map(link => createLink(link.url, link.label)).join("<br>") || ""
-    }</td>`;
+    const chordsCell = `<td>${song.chords?.map(link => createLink(link.url, link.label)).join("<br>") || ""
+      }</td>`;
 
     // Lyrics cell
-    const lyricsCell = `<td>${
-      song.lyrics?.map(link => createLink(link.url, link.label)).join("<br>") || ""
-    }</td>`;
+    const lyricsCell = `<td>${song.lyrics?.map(link => createLink(link.url, link.label)).join("<br>") || ""
+      }</td>`;
 
     // Video cell
-    const videoCell = `<td>${
-      song.video?.map(link => createLink(link.url, link.label)).join("<br>") || ""
-    }</td>`;
+    const videoCell = `<td>${song.video?.map(link => createLink(link.url, link.label)).join("<br>") || ""
+      }</td>`;
 
     // Audio cell
-    const audioCell = `<td>${
-      song.audio?.map(link => createLink(link.url, link.label)).join("<br>") || ""
-    }</td>`;
+    const audioCell = `<td>${song.audio?.map(link => createLink(link.url, link.label)).join("<br>") || ""
+      }</td>`;
 
     row.innerHTML = titleCell + chordsCell + lyricsCell + videoCell + audioCell;
     tbody.appendChild(row);
   });
 }
+
+async function loadPlaylistFile() {
+  try {
+    const response = await fetch("playlist.txt");
+    const text = await response.text();
+
+    return text
+      .split("\n")
+      .map(x => x.trim())
+      .filter(x => x.length > 0);
+
+  } catch (e) {
+    console.error("Could not load playlist.txt", e);
+    return [];
+  }
+}
+
+function filterSongs(playlistArray) {
+  document.querySelectorAll(".song-item").forEach(row => {
+    const title = row.getAttribute("data-title");
+    if (playlistArray.includes(title)) {
+      row.classList.remove("d-none");
+    } else {
+      row.classList.add("d-none");
+    }
+  });
+}
+
+function showAllSongs() {
+  document.querySelectorAll(".song-item").forEach(row => {
+    row.classList.remove("d-none");
+  });
+}
+
+function reorderSongs(playlistArray) {
+  const tbody = document.getElementById("songTableBody");
+
+  // Get all song rows as an array
+  const rows = Array.from(document.querySelectorAll(".song-item"));
+
+  // Sort rows based on the index of their title in playlist.txt
+  rows.sort((a, b) => {
+    const titleA = a.getAttribute("data-title");
+    const titleB = b.getAttribute("data-title");
+
+    return playlistArray.indexOf(titleA) - playlistArray.indexOf(titleB);
+  });
+
+  // Append rows in new order
+  rows.forEach(row => tbody.appendChild(row));
+}
+
+
+document.getElementById("currentPlaylistOnly").addEventListener("change", async function () {
+  if (this.checked) {
+    const playlist = await loadPlaylistFile();
+    filterSongs(playlist);
+    reorderSongs(playlist);
+  } else {
+    showAllSongs();
+    reorderSongs(songs.map(s => s.title)); // restore original order
+  }
+});
+
+
 
 // Call this when the page loads
 window.onload = populateSongTable;
