@@ -476,4 +476,16 @@ document.getElementById("currentPlaylistOnly").addEventListener("change", async 
 
 
 // Call this when the page loads
-window.onload = populateSongTable;
+window.onload = async function () {
+  // Populate songs first
+  populateSongTable();
+
+  // Then check the checkbox state
+  const checkbox = document.getElementById("currentPlaylistOnly");
+  if (checkbox.checked) {
+    const playlist = await loadPlaylistFile();
+    filterSongs(playlist);
+    reorderSongs(playlist);
+  }
+};
+
