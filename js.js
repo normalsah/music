@@ -42,7 +42,8 @@ const songs = [
       { label: "YouTube", url: "https://www.youtube.com/watch?v=7f3EGjRxxNI&t=31" }
     ],
     audio: [
-      { label: "MP3", url: "mp3/PinkFloyd-ComfortablyNumb.mp3" }
+      { label: "MP3", url: "mp3/PinkFloyd-ComfortablyNumb.mp3" },
+      { label: "Us", url: "mp3/us/ComfortablyNumb.mp3" }
     ]
   },
   {
@@ -58,7 +59,8 @@ const songs = [
       { label: "YouTube", url: "https://www.youtube.com/watch?v=XFkzRNyygfk" }
     ],
     audio: [
-      { label: "MP3", url: "mp3/Radiohead-Creep.mp3" }
+      { label: "MP3", url: "mp3/Radiohead-Creep.mp3" },
+      { label: "Us", url: "mp3/us/Creep.mp3" }
     ]
   },
   {
@@ -74,7 +76,8 @@ const songs = [
       { label: "YouTube", url: "https://www.youtube.com/watch?v=NCtzkaL2t_Y" }
     ],
     audio: [
-      { label: "MP3", url: "mp3/Beatles-DontLetMeDown.mp3" }
+      { label: "MP3", url: "mp3/Beatles-DontLetMeDown.mp3" },
+      { label: "Us", url: "mp3/us/DontLetMeDown.mp3" }
     ]
   },
   {
@@ -90,7 +93,8 @@ const songs = [
       { label: "YouTube", url: "https://www.youtube.com/watch?v=5rOiW_xY-kc" }
     ],
     audio: [
-      { label: "MP3", url: "mp3/REM-EverybodyHurts.mp3" }
+      { label: "MP3", url: "mp3/REM-EverybodyHurts.mp3" },
+      { label: "Us", url: "mp3/us/EverybodyHurts.mp3" }
     ]
   },
   {
@@ -220,7 +224,8 @@ const songs = [
       { label: "YouTube", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
     ],
     audio: [
-      { label: "YouTube", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" }
+      { label: "YouTube", url: "https://www.youtube.com/watch?v=hwZNL7QVJjE" },
+      { label: "Us", url: "mp3/us/StandByMe.mp3" }
     ]
   },
   {
@@ -293,7 +298,7 @@ const songs = [
   {
     title: "Wild Horses",
     chords: [
-      { label: "Chords", url: "https://tabs.ultimate-guitar.com/tab/the-rolling-stones/wild-horses-chords-860978" },
+      { label: "Chords", url: "https://tabs.ultimate-guitar.com/tab/the-rolling-stones/wild-horses-chords-860978" }
     ],
     lyrics: [
       { label: "azlyrics", url: "https://www.azlyrics.com/lyrics/rollingstones/wildhorses.html" }
@@ -302,7 +307,8 @@ const songs = [
       { label: "YouTube", url: "https://www.youtube.com/watch?v=nY_GgPi5eCM" }
     ],
     audio: [
-      { label: "MP3", url: "mp3/RollingStones-WildHorses.mp3" }
+      { label: "MP3", url: "mp3/RollingStones-WildHorses.mp3" },
+      { label: "Us", url: "mp3/us/WildHorses.mp3"}
     ]
   },
   {
