@@ -308,7 +308,7 @@ const songs = [
     ],
     audio: [
       { label: "MP3", url: "mp3/RollingStones-WildHorses.mp3" },
-      { label: "Us", url: "mp3/us/WildHorses.mp3" }
+      { label: "Us", url: "mp3/us/WildHorses.mp3"}
     ]
   },
   {
@@ -391,8 +391,8 @@ function populateSongTable() {
 
     // Title cell: link to .txt file if available
     const titleCell = `<td>${song.titleLink
-      ? createLink(song.titleLink, song.title)
-      : song.title
+        ? createLink(song.titleLink, song.title)
+        : song.title
       }</td>`;
 
     // Chords cell
