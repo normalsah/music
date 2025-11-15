@@ -479,8 +479,6 @@ document.getElementById("currentPlaylistOnly").addEventListener("change", async 
   }
 });
 
-
-
 // Call this when the page loads
 window.onload = async function () {
   // Populate songs first
@@ -494,4 +492,3 @@ window.onload = async function () {
     reorderSongs(playlist);
   }
 };
-
